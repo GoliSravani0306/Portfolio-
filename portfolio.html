@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sravani Goli – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf8fb;--card:#ffffff;--ink:#3b3350;--muted:#7a7090;--line:#eadff0;
+--pink:#fbd3e0;--lav:#e0d6fa;--mint:#cdf1e3;--peach:#ffe0c9;--sky:#d3e8fb;--lemon:#fff3c4;--accent:#8e7bd6;
+--serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Nunito','Segoe UI',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1828;--card:#2a2339;--ink:#f1eafc;--muted:#b4a9cc;--line:#3d3352;
+--pink:#5b3448;--lav:#43396b;--mint:#2c5148;--peach:#5d4333;--sky:#304c68;--lemon:#585032;--accent:#b9a8f5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1828;--card:#2a2339;--ink:#f1eafc;--muted:#b4a9cc;--line:#3d3352;
+--pink:#5b3448;--lav:#43396b;--mint:#2c5148;--peach:#5d4333;--sky:#304c68;--lemon:#585032;--accent:#b9a8f5;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.2}
+a{color:inherit}
+button,summary{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:12px}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-content:center;justify-items:center;gap:1.4rem;text-align:center;padding:2rem 1.2rem;position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.75;z-index:0;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--pink);top:-60px;left:-80px}
+.b2{width:380px;height:380px;background:var(--lav);bottom:-90px;right:-90px;animation-delay:-5s}
+.b3{width:260px;height:260px;background:var(--mint);top:45%;left:60%;animation-delay:-9s}
+@keyframes drift{to{transform:translate(30px,-24px) scale(1.08)}}
+.hero>*:not(.blob){position:relative;z-index:1}
+.avatar{width:clamp(170px,46vw,230px);aspect-ratio:1;border-radius:50%;border:0;padding:8px;background:conic-gradient(var(--pink),var(--lav),var(--sky),var(--mint),var(--peach),var(--pink));display:grid;place-items:center;transition:transform .3s}
+.avatar:hover{transform:rotate(-4deg) scale(1.03)}
+.avatar .in{width:100%;height:100%;border-radius:50%;background:var(--card);display:grid;place-items:center;overflow:hidden;font:600 3.6rem var(--serif);color:var(--accent)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.tip{font-size:.85rem;color:var(--muted);margin-top:-.6rem}
+.name{font-size:clamp(2rem,6vw,3.1rem)}
+.tag{margin:0;color:var(--muted);font-size:1.1rem}
+.icons{display:flex;gap:1rem;justify-content:center}
+.icons a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:2px solid var(--line);transition:transform .2s,background .2s}
+.icons a:hover{transform:translateY(-5px)}
+.icons a:nth-child(1):hover{background:var(--sky)}.icons a:nth-child(2):hover{background:var(--lav)}.icons a:nth-child(3):hover{background:var(--pink)}
+.icons svg{width:24px;height:24px;fill:currentColor}
+.go{background:none;border:0;color:var(--muted);font-size:.95rem;padding:.5rem 1rem;border-radius:20px}
+.go:hover{background:var(--card)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;padding:calc(env(safe-area-inset-top,0px) + .6rem) .8rem .6rem;display:flex;gap:.4rem;overflow-x:auto;justify-content:center;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+nav a{white-space:nowrap;text-decoration:none;padding:.35rem .9rem;border-radius:20px;font-weight:600;font-size:.95rem;background:var(--card);border:1.5px solid var(--line)}
+nav a:hover{background:var(--lav)}
+
+/* sections */
+main{max-width:860px;margin:0 auto;padding:1rem 1.2rem 4rem}
+section{padding:3.2rem 0 .5rem}
+h2{font-size:1.9rem;margin-bottom:.4rem}
+.sub{margin:0 0 1.4rem;color:var(--muted)}
+.about{background:var(--lav);border-radius:28px;padding:1.6rem 1.8rem;margin:0}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.9rem}
+.tile{border:2px solid transparent;border-radius:24px;padding:1.2rem;text-align:left;transition:transform .2s,border-color .2s}
+.tile b{display:block;font:600 1.35rem var(--serif)}
+.tile span{font-size:.9rem;color:var(--muted)}
+.tile:hover{transform:translateY(-3px)}
+.tile[aria-pressed="true"]{border-color:var(--accent);transform:translateY(-3px)}
+.panel{margin-top:1rem;background:var(--card);border:2px solid var(--line);border-radius:24px;padding:1.4rem 1.6rem;min-height:130px}
+.panel.pop{animation:pop .35s}
+@keyframes pop{from{opacity:0;transform:scale(.97)}}
+.panel h3{font-size:1.3rem;margin-bottom:.5rem}
+.panel p{margin:.2rem 0}
+.score{display:inline-block;margin-top:.5rem;padding:.3rem 1rem;border-radius:20px;background:var(--mint);font-weight:700}
+
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.tab{border:2px solid var(--line);background:var(--card);padding:.4rem 1.1rem;border-radius:22px;font-weight:600}
+.tab[aria-pressed="true"]{background:var(--lav);border-color:var(--accent)}
+.chip{padding:.4rem 1rem;border-radius:20px;font-weight:600;animation:pop .3s}
+
+details{background:var(--card);border:2px solid var(--line);border-radius:22px;margin-bottom:.8rem;overflow:hidden}
+details[open]{border-color:var(--accent)}
+summary{list-style:none;padding:1rem 1.3rem;font-weight:700;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:600 1.5rem var(--serif);color:var(--accent);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+summary small{display:block;font-weight:400;color:var(--muted)}
+.body{padding:0 1.3rem 1.2rem}
+.body p{margin:.3rem 0}
+.links{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+.links a{text-decoration:none;font-weight:700;font-size:.92rem;padding:.35rem .95rem;border-radius:18px;background:var(--sky)}
+.links a:hover{background:var(--pink)}
+.tech{font-size:.88rem;color:var(--muted)}
+
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem}
+.cert{border-radius:22px;padding:1.1rem 1.3rem}
+.cert b{display:block}.cert span{font-size:.9rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);padding:2rem 1rem 3rem;font-size:.95rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <button class="avatar" id="avatar" aria-label="Upload your profile photo"><span class="in" id="avIn">SG</span></button>
+  <input type="file" id="file" accept="image/*" hidden>
+  <div class="tip" id="tip">Tap the photo to add yours</div>
+  <h1 class="name">Sravani Goli</h1>
+  <p class="tag">Aspiring software developer who loves Python, data and AI</p>
+  <div class="icons">
+    <a href="https://www.linkedin.com/in/golisravani03" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.63 4.74 6.05V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V21h-4z"/></svg></a>
+    <a href="https://github.com/GoliSravani0306" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a href="mailto:golisravani18@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.5 2.2v.3L12 12.8l7.5-5.3v-.3zm15 2.7L12 15.2 4.5 9.9V17h15z"/></svg></a>
+  </div>
+  <button class="go" id="go">Explore my work ↓</button>
+</header>
+
+<nav id="nav" aria-label="Sections">
+  <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#internships">Internships</a><a href="#projects">Projects</a><a href="#certs">Certificates</a>
+</nav>
+
+<main>
+  <section id="about">
+    <h2>About me</h2>
+    <p class="about">I’m a motivated MCA student with a strong foundation in Python, SQL and software development fundamentals. I enjoy solving problems, thinking logically and turning ideas into practical projects. I’m eager to start my career as a Software Developer and build efficient, scalable, user-focused applications.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p class="sub">Tap a card to see the details.</p>
+    <div class="tiles" id="tiles"></div>
+    <div class="panel" id="eduPanel"><p style="color:var(--muted)">Pick MCA, BCA, Intermediate or SSC above.</p></div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical skills</h2>
+    <p class="sub">Choose a category to see what’s inside.</p>
+    <div class="chips" id="skillTabs" style="margin-bottom:1rem"></div>
+    <div class="chips" id="skillList"></div>
+  </section>
+
+  <section id="internships">
+    <h2>Internships</h2>
+    <p class="sub">Open one to see what I worked on.</p>
+    <div id="interns"></div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">Open a project for details and links.</p>
+    <div id="projs"></div>
+  </section>
+
+  <section id="certs">
+    <h2>Certificates</h2>
+    <div class="certs" id="certList"></div>
+  </section>
+
+  <section id="soft">
+    <h2>Soft skills</h2>
+    <div class="chips" id="softList"></div>
+  </section>
+</main>
+<footer>Let’s connect: use the icons at the top of the page. <a href="#top">Back to top</a></footer>
+
+<script>
+var C=['var(--pink)','var(--lav)','var(--mint)','var(--peach)','var(--sky)','var(--lemon)'];
+var $=function(i){return document.getElementById(i)};
+
+/* hero */
+$('go').onclick=function(){$('about').scrollIntoView({behavior:'smooth'})};
+$('avatar').onclick=function(){$('file').click()};
+$('file').onchange=function(e){
+  var f=e.target.files&&e.target.files[0]; if(!f)return;
+  var r=new FileReader();
+  r.onload=function(){$('avIn').innerHTML='<img alt="Sravani Goli" src="'+r.result+'">';$('tip').style.display='none'};
+  r.readAsDataURL(f);
+};
+
+/* education */
+var edu=[
+ {k:'MCA',t:'Master of Computer Applications',s:'VVIT University',y:'2025 – 2027',m:'Pursuing'},
+ {k:'BCA',t:'Bachelor of Computer Applications',s:'Vignan Degree and PG College',y:'2022 – 2025',m:'90%'},
+ {k:'Intermediate',t:'Intermediate',s:'NRI Junior College',y:'2020 – 2022',m:'83%'},
+ {k:'SSC',t:'Secondary School Certificate',s:'Narayana E.M. School',y:'2019 – 2020',m:'96%'}];
+$('tiles').innerHTML=edu.map(function(e,i){return '<button class="tile" data-i="'+i+'" aria-pressed="false" style="background:'+C[i]+'"><b>'+e.k+'</b><span>'+e.y+'</span></button>'}).join('');
+$('tiles').onclick=function(ev){
+  var b=ev.target.closest('.tile'); if(!b)return;
+  document.querySelectorAll('.tile').forEach(function(t){t.setAttribute('aria-pressed',t===b)});
+  var e=edu[b.dataset.i],p=$('eduPanel');
+  p.className='panel';void p.offsetWidth;p.className='panel pop';
+  p.innerHTML='<h3>'+e.t+'</h3><p>'+e.s+'</p><p style="color:var(--muted)">'+e.y+'</p><span class="score">'+(e.m==='Pursuing'?'Currently pursuing':'Score: '+e.m)+'</span>';
+};
+
+/* skills */
+var sk={'Programming':['Python','Java','C'],'Web':['HTML','CSS','JavaScript'],'Databases':['SQL','DBMS'],'Data analytics':['Excel','EDA','Data visualization','SQL'],'AI and tools':['Prompt engineering','AI tools','Git','GitHub','VS Code','MS Office']};
+var ks=Object.keys(sk);
+$('skillTabs').innerHTML=ks.map(function(k,i){return '<button class="tab" data-k="'+k+'" aria-pressed="'+(i===0)+'">'+k+'</button>'}).join('');
+function showSkills(k){$('skillList').innerHTML=sk[k].map(function(s,i){return '<span class="chip" style="background:'+C[(i+2)%6]+'">'+s+'</span>'}).join('')}
+showSkills(ks[0]);
+$('skillTabs').onclick=function(ev){var b=ev.target.closest('.tab');if(!b)return;
+  document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-pressed',t===b)});showSkills(b.dataset.k)};
+
+/* internships */
+var ints=[
+ ['Data Analytics Intern','Edunet Foundation (VOIS for Tech, supported by AICTE)',['Worked with Python, data analysis, visualization, AI and LLMs while building practical project skills.']],
+ ['AI & Prompt Engineering Intern','VaultofCodes',['Designed prompts and explored zero-shot, few-shot and structured prompting techniques.','Developed Python-based assignments using practical programming concepts.']],
+ ['Data Analytics Summer Intern','ApexPlanet Software Pvt. Ltd.',['Performed data cleaning, EDA, SQL analysis, visualization and dashboard development.','Generated insights from datasets to identify trends and patterns.']],
+ ['Full Stack Development Intern','V Nuture IT',['Built and integrated frontend, backend and database components.','Gained practical experience in full-stack web development.']],
+ ['Short-Term Python Intern','Purple Technologies',['Developed Python programs using core programming and problem-solving concepts.']]];
+$('interns').innerHTML=ints.map(function(x,i){return '<details><summary style="background:linear-gradient(90deg,'+C[i]+',transparent 70%)"><span>'+x[0]+'<small>'+x[1]+'</small></span></summary><div class="body">'+x[2].map(function(l){return '<p>'+l+'</p>'}).join('')+'</div></details>'}).join('');
+
+/* projects */
+var pr=[
+ ['Seasonal Agricultural Performance Analytics','Python, Data Analytics, Visualization',['Analyzed agricultural performance metrics (yield, profit, resource usage and environmental conditions) across India’s three primary farming seasons.'],[['GitHub','https://github.com/GoliSravani0306/Seasonal-Agriculture-Performance-Analysis']]],
+ ['AI Study Assistant','Python, Streamlit, Gemini API',['Built an AI-powered study tool that generates explanations, notes and quizzes from user input.','Designed a modular prompt library for reusable, maintainable AI prompts.'],[['GitHub','https://github.com/GoliSravani0306/ai-study-assistant'],['Live demo','https://ai-study-assistant-ecpo.onrender.com']]],
+ ['Data Analytics Dashboard','Python, SQL, Excel',['Cleaned and analyzed datasets using Python and SQL.','Created visualizations and an interactive dashboard to find trends and generate insights.'],[['GitHub','https://github.com/GoliSravani0306/GoliSravani-Data-Analyst-Internship-Portfolio'],['Live portfolio','https://golisravani0306.github.io/GoliSravani-Data-Analyst-Internship-Portfolio/']]],
+ ['AI Assistant Development','Python, Flask',['Developed an AI assistant that answers questions, summarizes text and generates content.','Applied zero-shot, few-shot and structured prompting techniques.'],[['GitHub','https://github.com/GoliSravani0306/ai-assistant.git'],['Live demo','https://ai-assistant-469o.onrender.com/']]],
+ ['Responsive Portfolio Website','HTML, CSS, JavaScript',['Developed a responsive website to showcase projects, skills and professional information.'],[]]];
+$('projs').innerHTML=pr.map(function(x,i){return '<details><summary style="background:linear-gradient(90deg,'+C[(i+1)%6]+',transparent 70%)"><span>'+x[0]+'<small>'+x[1]+'</small></span></summary><div class="body">'+x[2].map(function(l){return '<p>'+l+'</p>'}).join('')+(x[3].length?'<div class="links">'+x[3].map(function(l){return '<a href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+'</a>'}).join('')+'</div>':'')+'</div></details>'}).join('');
+
+/* certificates + soft skills */
+var ce=[['Programming in Java','NPTEL, IIT Kharagpur'],['Joy of Computing using Python','NPTEL, IIT Ropar'],['Web Development Fundamentals','IBM'],['HTML & CSS Responsive Website','Udemy'],['JavaScript for Beginners','Udemy']];
+$('certList').innerHTML=ce.map(function(c,i){return '<div class="cert" style="background:'+C[(i+3)%6]+'"><b>'+c[0]+'</b><span>'+c[1]+'</span></div>'}).join('');
+$('softList').innerHTML=['Problem solving','Communication','Teamwork','Creative thinking'].map(function(s,i){return '<span class="chip" style="background:'+C[i]+'">'+s+'</span>'}).join('');
+</script>
+</body>
+</html>
